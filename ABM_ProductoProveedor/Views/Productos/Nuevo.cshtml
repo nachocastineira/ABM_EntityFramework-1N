@@ -1,0 +1,26 @@
+﻿@model ABM_ProductoProveedor.Entidades.Producto
+@using ABM_ProductoProveedor.Entidades
+
+@{
+    ViewBag.Title = "Nuevo";
+}
+
+<h2>Nuevo Producto</h2>
+
+<form action="/Productos/Nuevo" method="post">
+
+                Proveedor: 
+                <select name="idProveedor">
+                    @foreach (Proveedor prov in ViewBag.proveedores)
+                    {
+                        <option value="@prov.IdProveedor">@prov.Nombre</option>
+                    }
+               </select>            
+                                   
+                <br />
+
+                 Nombre del producto: <input name="nombre"/>            
+                <br />
+
+                <input type="submit" value="Nuevo"/>
+</form>

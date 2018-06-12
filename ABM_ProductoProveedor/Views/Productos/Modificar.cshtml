@@ -1,0 +1,35 @@
+﻿@model ABM_ProductoProveedor.Entidades.Producto
+@using ABM_ProductoProveedor.Entidades
+
+@{
+    ViewBag.Title = "Modificar";
+}
+
+<h2>Modificar</h2>
+
+<form action="/Productos/Modificar" method="post">
+
+                <input type="hidden" name="idProducto"/>
+
+                Nombre del producto: <input name="nombre"/>            
+                <br />
+
+                Proveedor: 
+                <select name="idProveedor">
+                    @foreach (Proveedor prov in ViewBag.proveedores)
+                    {
+                        if(Model.idProveedor == prov.IdProveedor)
+                        {
+                            <option value="@prov.IdProveedor" selected="selected">@prov.Nombre</option>
+                        }
+                        else
+                        {
+                            <option value="@prov.IdProveedor" >@prov.Nombre</option>
+                        }
+                             
+                    }
+               </select>                                           
+                <br />
+
+                <input type="submit" value="Guardar"/>
+</form>

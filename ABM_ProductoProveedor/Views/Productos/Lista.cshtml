@@ -1,0 +1,23 @@
+﻿@model ABM_ProductoProveedor.Entidades.Producto
+@using ABM_ProductoProveedor.Entidades
+
+@{
+    ViewBag.Title = "Lista";
+}
+
+<h2>Lista</h2>
+
+<table>
+    <tr>
+        <th>Proveedor</th>
+        <th>Nombre del producto</th>
+    </tr>
+
+    @foreach (Producto prod in ViewBag.productos)
+    {
+            <tr>
+                <td>@prod.IdProveedor</td>
+                <td>@prod.Nombre</td>
+            </tr>
+        }
+</table>
